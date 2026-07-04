@@ -198,7 +198,7 @@ export default function Home() {
             </p>
           </div>
           <div className="w-full rounded-xl border border-slate-200 shadow-lg overflow-hidden h-80 sm:h-[500px]">
-            <MapContainer center={[-8.5, 147.35]} zoom={10} style={{ height: '100%', width: '100%' }}>
+            <MapContainer center={[-8.5, 147.35]} zoom={10} scrollWheelZoom={false} style={{ height: '100%', width: '100%' }}>
               <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

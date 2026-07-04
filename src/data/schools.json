@@ -162,5 +162,33 @@
       "qualifications": "Diploma in Technical Education, Port Moresby Technical College",
       "since": "2021"
     }
+  },
+  {
+    "id": "kairuku-secondary",
+    "name": "Kairuku Secondary School",
+    "level": "Secondary",
+    "llg": "Kairuku Rural LLG",
+    "location": "Kairuku Station",
+    "enrolment": 780,
+    "type": "Government",
+    "image": "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&q=80",
+    "informationDesk": {
+      "phone": "+675 312 3462",
+      "email": "info.kairuku@education.gov.pg"
+    },
+    "registrationNumber": "PNG-EDU-007",
+    "coordinates": "-8.5500, 147.4500",
+    "established": "1975",
+    "campusImages": [
+      "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80"
+    ],
+    "principal": {
+      "name": "Elizabeth Wari",
+      "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80",
+      "bio": "Mrs. Elizabeth Wari has been Principal of Kairuku Secondary School since 2016. With 28 years of experience in secondary education, she has a strong track record of academic excellence and student leadership development. She holds a Master of Education from the University of Papua New Guinea and is committed to preparing students for higher education and future careers.",
+      "qualifications": "Master of Education, UPNG",
+      "since": "2016"
+    }
   }
 ]
