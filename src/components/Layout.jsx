@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
+import TopBar from './TopBar'
 import Header from './Header'
 import Footer from './Footer'
 
@@ -23,6 +24,7 @@ export default function Layout() {
       >
         Skip to main content
       </a>
+      <TopBar />
       <Header />
       <main id="main" className="flex-1">
         <Outlet />
