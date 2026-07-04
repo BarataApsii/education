@@ -109,7 +109,7 @@ export default function Home() {
                 {counts.schools}+
               </div>
               <div className="mt-2 text-sm font-medium text-brand-100 sm:text-base">
-                Education Institutions
+                Educational Institutions
               </div>
             </div>
             <div className="text-center">
