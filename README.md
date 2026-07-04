@@ -1,4 +1,4 @@
-# Kairuku District Education Office — Website
+# Unino Bundi District Education Office — Website
 
 A public-facing, informational website for a district education office, built with **React + Vite** and **Tailwind CSS**. It is a static, front-end-only site (no backend, no authentication) suitable for a government or church-administration audience.
 
