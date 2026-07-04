@@ -48,37 +48,37 @@ export default function Schools() {
         </div>
 
         {/* Desktop table */}
-        <div className="hidden overflow-hidden rounded-xl border border-slate-200 md:block">
+        <div className="hidden overflow-hidden rounded-xl border border-slate-200 shadow-sm md:block">
           <table className="min-w-full divide-y divide-slate-200 text-sm">
-            <thead className="bg-slate-50 text-left text-xs uppercase tracking-wide text-slate-500">
+            <thead className="bg-slate-50 text-left text-xs font-semibold uppercase tracking-wide text-slate-500">
               <tr>
-                <th className="px-4 py-3 font-semibold">School</th>
-                <th className="px-4 py-3 font-semibold">Level</th>
-                <th className="px-4 py-3 font-semibold">LLG</th>
-                <th className="px-4 py-3 font-semibold">Location</th>
-                <th className="px-4 py-3 font-semibold">Type</th>
-                <th className="px-4 py-3 text-right font-semibold">Enrolment</th>
+                <th className="px-6 py-4">School</th>
+                <th className="px-6 py-4">Level</th>
+                <th className="px-6 py-4">LLG</th>
+                <th className="px-6 py-4">Location</th>
+                <th className="px-6 py-4">Type</th>
+                <th className="px-6 py-4 text-right">Enrolment</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100 bg-white">
               {filtered.map((s) => (
-                <tr key={s.id} className="hover:bg-slate-50 cursor-pointer">
-                  <td className="px-4 py-3 font-medium text-slate-900">
-                    <Link to={`/schools/${s.id}`} className="flex items-center gap-3">
+                <tr key={s.id} className="transition-colors hover:bg-slate-50">
+                  <td className="px-6 py-4">
+                    <Link to={`/schools/${s.id}`} className="group flex items-center gap-4">
                       <img
                         src={s.image}
                         alt={s.name}
                         loading="lazy"
-                        className="h-10 w-14 flex-none rounded object-cover"
+                        className="h-12 w-16 flex-none rounded-lg object-cover shadow-sm"
                       />
-                      <span>{s.name}</span>
+                      <span className="font-medium text-slate-900 group-hover:text-brand-600 transition-colors">{s.name}</span>
                     </Link>
                   </td>
-                  <td className="px-4 py-3 text-slate-600">{s.level}</td>
-                  <td className="px-4 py-3 text-slate-600">{s.llg}</td>
-                  <td className="px-4 py-3 text-slate-600">{s.location}</td>
-                  <td className="px-4 py-3 text-slate-600">{s.type}</td>
-                  <td className="px-4 py-3 text-right text-slate-600">{s.enrolment.toLocaleString()}</td>
+                  <td className="px-6 py-4 text-slate-600">{s.level}</td>
+                  <td className="px-6 py-4 text-slate-600">{s.llg}</td>
+                  <td className="px-6 py-4 text-slate-600">{s.location}</td>
+                  <td className="px-6 py-4 text-slate-600">{s.type}</td>
+                  <td className="px-6 py-4 text-right text-slate-600">{s.enrolment.toLocaleString()}</td>
                 </tr>
               ))}
             </tbody>
@@ -88,23 +88,32 @@ export default function Schools() {
         {/* Mobile cards */}
         <div className="grid gap-4 md:hidden">
           {filtered.map((s) => (
-            <Link key={s.id} to={`/schools/${s.id}`} className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm hover:shadow-md transition">
+            <Link key={s.id} to={`/schools/${s.id}`} className="group overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-shadow hover:shadow-md">
               <img
                 src={s.image}
                 alt={s.name}
                 loading="lazy"
-                className="h-36 w-full object-cover"
+                className="h-40 w-full object-cover"
               />
-              <div className="p-6">
-              <h2 className="text-base font-semibold text-slate-900">{s.name}</h2>
-              <p className="mt-1 text-sm text-slate-500">
-                {s.level} &middot; {s.type}
-              </p>
-              <dl className="mt-3 grid grid-cols-2 gap-2 text-sm text-slate-600">
-                <div><dt className="text-slate-400">LLG</dt><dd>{s.llg}</dd></div>
-                <div><dt className="text-slate-400">Location</dt><dd>{s.location}</dd></div>
-                <div><dt className="text-slate-400">Enrolment</dt><dd>{s.enrolment.toLocaleString()}</dd></div>
-              </dl>
+              <div className="p-5">
+                <h2 className="text-lg font-semibold text-slate-900 group-hover:text-brand-600 transition-colors">{s.name}</h2>
+                <p className="mt-1 text-sm text-slate-500">
+                  {s.level} · {s.type}
+                </p>
+                <dl className="mt-4 space-y-2 text-sm">
+                  <div className="flex justify-between">
+                    <span className="text-slate-400">LLG</span>
+                    <span className="text-slate-600 font-medium">{s.llg}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-slate-400">Location</span>
+                    <span className="text-slate-600 font-medium">{s.location}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-slate-400">Enrolment</span>
+                    <span className="text-slate-600 font-medium">{s.enrolment.toLocaleString()}</span>
+                  </div>
+                </dl>
               </div>
             </Link>
           ))}

@@ -176,13 +176,16 @@ export default function SchoolDetail() {
             <p className="text-slate-600 mb-4">
               <span className="font-semibold">Address:</span> {school.location}, {school.llg}
             </p>
-            <div className="relative h-96 w-full overflow-hidden rounded-lg">
+            <div className="relative h-96 w-full overflow-hidden rounded-lg bg-slate-100">
               <iframe
-                src={`https://www.google.com/maps?q=${school.coordinates}&output=embed`}
-                className="h-full w-full border-0"
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                scrolling="no"
+                marginHeight="0"
+                marginWidth="0"
+                style={{ border: 0 }}
+                src={`https://www.openstreetmap.org/export/embed.html?bbox=${(parseFloat(school.coordinates.split(',')[1]) - 0.02).toFixed(4)},${(parseFloat(school.coordinates.split(',')[0]) - 0.02).toFixed(4)},${(parseFloat(school.coordinates.split(',')[1]) + 0.02).toFixed(4)},${(parseFloat(school.coordinates.split(',')[0]) + 0.02).toFixed(4)}&layer=mapnik&marker=${school.coordinates}`}
                 title={`${school.name} location`}
               />
             </div>
@@ -190,12 +193,12 @@ export default function SchoolDetail() {
               Coordinates: {school.coordinates}
             </p>
             <a
-              href={`https://www.google.com/maps?q=${school.coordinates}`}
+              href={`https://www.openstreetmap.org/?mlat=${school.coordinates.split(',')[0]}&mlon=${school.coordinates.split(',')[1]}#map=15/${school.coordinates.split(',')[0]}/${school.coordinates.split(',')[1]}`}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary mt-4 inline-block"
             >
-              Open in Google Maps
+              Open in OpenStreetMap
             </a>
           </div>
         </div>

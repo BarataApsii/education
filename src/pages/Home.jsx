@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState } from 'react'
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import L from 'leaflet'
 import Seo from '../components/Seo'
 import HeroSlider from '../components/HeroSlider'
 import { site } from '../data/site'
@@ -20,17 +22,24 @@ function formatDate(iso) {
   })
 }
 
+// Fix for default marker icons in Leaflet
+delete L.Icon.Default.prototype._getIconUrl
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
+  iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+})
+
 export default function Home() {
   const [counts, setCounts] = useState({ llgs: 0, schools: 0, students: 0 })
   const [hasAnimated, setHasAnimated] = useState(false)
-  const statsRef = useRef(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !hasAnimated) {
           setHasAnimated(true)
-          
+
           // Animate LLGs count
           const llgTarget = llgs.length
           let llgCurrent = 0
@@ -74,8 +83,9 @@ export default function Home() {
       { threshold: 0.5 }
     )
 
-    if (statsRef.current) {
-      observer.observe(statsRef.current)
+    const statsElement = document.getElementById('stats-section')
+    if (statsElement) {
+      observer.observe(statsElement)
     }
 
     return () => observer.disconnect()
@@ -93,7 +103,7 @@ export default function Home() {
       <HeroSlider />
 
       {/* Stats section */}
-      <section ref={statsRef} className="bg-brand-600 py-16" aria-label="District statistics">
+      <section id="stats-section" className="bg-brand-600 py-16" aria-label="District statistics">
         <div className="container-page">
           <div className="grid gap-8 md:grid-cols-3">
             <div className="text-center">
@@ -174,6 +184,50 @@ export default function Home() {
               title="Transparent"
               body="Public notices, selection results and grant announcements published for all to see."
             />
+          </div>
+        </div>
+      </section>
+
+      {/* School locations map */}
+      <section className="bg-white py-16" aria-labelledby="map-heading">
+        <div className="container-page">
+          <div className="mx-auto max-w-3xl text-center mb-10">
+            <h2 id="map-heading" className="text-3xl font-bold text-slate-900 sm:text-4xl">School Locations</h2>
+            <p className="mt-4 text-lg text-slate-600">
+              Explore our educational institutions across the district. Click on a marker to view school details.
+            </p>
+          </div>
+          <div className="w-full rounded-xl border border-slate-200 shadow-lg overflow-hidden" style={{ height: '500px' }}>
+            <MapContainer center={[-8.5, 147.35]} zoom={10} style={{ height: '100%', width: '100%' }}>
+              <TileLayer
+                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              />
+              {schools.map((school) => {
+                const [lat, lng] = school.coordinates.split(',').map(coord => parseFloat(coord.trim()))
+                return (
+                  <Marker key={school.id} position={[lat, lng]}>
+                    <Popup>
+                      <div style={{ padding: '8px', minWidth: '200px' }}>
+                        <h3 style={{ margin: '0 0 4px 0', fontSize: '14px', fontWeight: 'bold' }}>{school.name}</h3>
+                        <p style={{ margin: '0', fontSize: '12px', color: '#666' }}>{school.level} • {school.location}</p>
+                        <Link 
+                          to={`/schools/${school.id}`} 
+                          style={{ display: 'inline-block', marginTop: '8px', padding: '4px 8px', background: '#2563eb', color: 'white', textDecoration: 'none', borderRadius: '4px', fontSize: '12px' }}
+                        >
+                          View Details
+                        </Link>
+                      </div>
+                    </Popup>
+                  </Marker>
+                )
+              })}
+            </MapContainer>
+          </div>
+          <div className="mt-6 flex flex-wrap justify-center gap-4">
+            <Link to="/schools" className="btn-primary">
+              View All Schools
+            </Link>
           </div>
         </div>
       </section>
