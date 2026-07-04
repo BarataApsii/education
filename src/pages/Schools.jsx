@@ -62,7 +62,17 @@ export default function Schools() {
             <tbody className="divide-y divide-slate-100 bg-white">
               {filtered.map((s) => (
                 <tr key={s.id} className="hover:bg-slate-50">
-                  <td className="px-4 py-3 font-medium text-slate-900">{s.name}</td>
+                  <td className="px-4 py-3 font-medium text-slate-900">
+                    <div className="flex items-center gap-3">
+                      <img
+                        src={s.image}
+                        alt={s.name}
+                        loading="lazy"
+                        className="h-10 w-14 flex-none rounded object-cover"
+                      />
+                      <span>{s.name}</span>
+                    </div>
+                  </td>
                   <td className="px-4 py-3 text-slate-600">{s.level}</td>
                   <td className="px-4 py-3 text-slate-600">{s.llg}</td>
                   <td className="px-4 py-3 text-slate-600">{s.location}</td>
@@ -77,7 +87,14 @@ export default function Schools() {
         {/* Mobile cards */}
         <div className="grid gap-4 md:hidden">
           {filtered.map((s) => (
-            <div key={s.id} className="card">
+            <div key={s.id} className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+              <img
+                src={s.image}
+                alt={s.name}
+                loading="lazy"
+                className="h-36 w-full object-cover"
+              />
+              <div className="p-6">
               <h2 className="text-base font-semibold text-slate-900">{s.name}</h2>
               <p className="mt-1 text-sm text-slate-500">
                 {s.level} &middot; {s.type}
@@ -87,6 +104,7 @@ export default function Schools() {
                 <div><dt className="text-slate-400">Location</dt><dd>{s.location}</dd></div>
                 <div><dt className="text-slate-400">Enrolment</dt><dd>{s.enrolment.toLocaleString()}</dd></div>
               </dl>
+              </div>
             </div>
           ))}
         </div>

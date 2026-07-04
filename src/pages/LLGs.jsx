@@ -18,7 +18,14 @@ export default function LLGs() {
       <section className="container-page py-14">
         <div className="grid gap-6 lg:grid-cols-3">
           {llgs.map((llg) => (
-            <article key={llg.id} className="card flex flex-col">
+            <article key={llg.id} className="flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition hover:shadow-md">
+              <img
+                src={llg.image}
+                alt={llg.name}
+                loading="lazy"
+                className="h-44 w-full object-cover"
+              />
+              <div className="flex flex-1 flex-col p-6">
               <h2 className="text-xl font-bold text-slate-900">{llg.name}</h2>
               <dl className="mt-3 flex flex-wrap gap-x-6 gap-y-1 text-sm text-slate-500">
                 <div>
@@ -35,6 +42,7 @@ export default function LLGs() {
                 <span className="font-semibold">Education focus: </span>
                 {llg.focus}
               </p>
+              </div>
             </article>
           ))}
         </div>

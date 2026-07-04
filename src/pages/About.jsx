@@ -53,14 +53,22 @@ export default function About() {
           </div>
         </div>
 
-        <div className="mt-12 rounded-xl bg-brand-50 p-8">
-          <h2 className="text-xl font-bold text-slate-900">About the office</h2>
-          <p className="mt-3 max-w-3xl text-slate-600">
-            The {site.name} is responsible for administering elementary, primary, secondary and
-            vocational education across three Local-Level Governments. The office manages teacher
-            appointments, school subsidies, enrolment records and infrastructure planning in
-            coordination with the Provincial Division of Education.
-          </p>
+        <div className="mt-12 grid items-center gap-8 overflow-hidden rounded-xl bg-brand-50 md:grid-cols-2">
+          <img
+            src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&w=800&q=80"
+            alt="Students celebrating graduation"
+            loading="lazy"
+            className="h-full min-h-[220px] w-full object-cover"
+          />
+          <div className="p-8">
+            <h2 className="text-xl font-bold text-slate-900">About the office</h2>
+            <p className="mt-3 text-slate-600">
+              The {site.name} is responsible for administering elementary, primary, secondary and
+              vocational education across three Local-Level Governments. The office manages teacher
+              appointments, school subsidies, enrolment records and infrastructure planning in
+              coordination with the Provincial Division of Education.
+            </p>
+          </div>
         </div>
       </section>
     </>

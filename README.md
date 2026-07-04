@@ -84,6 +84,10 @@ All placeholder content lives in `src/data/`:
 
 You can also update the default `<title>` and description in `index.html`.
 
+### Images
+
+Placeholder imagery is hotlinked from [Unsplash](https://unsplash.com/) (free to use) via `image` fields in the data files and `site.heroImage` in `site.js`. Replace these URLs with your own hosted images (or files placed in `public/`) when ready.
+
 ## Deployment (Vercel)
 
 This project is ready to deploy on [Vercel](https://vercel.com/) as a static site.

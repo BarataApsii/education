@@ -48,15 +48,24 @@ export default function Home() {
               <Link to="/news" className="btn-primary">View latest notices</Link>
               <Link to="/about" className="btn-outline">About the district</Link>
             </div>
+
+            <div className="mt-10 grid grid-cols-3 gap-4">
+              {stats.map((s) => (
+                <div key={s.label} className="card text-center">
+                  <div className="text-2xl font-extrabold text-brand-700 sm:text-3xl">{s.value}</div>
+                  <div className="mt-1 text-xs text-slate-500">{s.label}</div>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <div className="grid grid-cols-3 gap-4">
-            {stats.map((s) => (
-              <div key={s.label} className="card text-center">
-                <div className="text-2xl font-extrabold text-brand-700 sm:text-3xl">{s.value}</div>
-                <div className="mt-1 text-xs text-slate-500">{s.label}</div>
-              </div>
-            ))}
+          <div className="relative">
+            <img
+              src={site.heroImage}
+              alt="Students learning in a district classroom"
+              loading="eager"
+              className="aspect-[4/3] w-full rounded-2xl object-cover shadow-lg"
+            />
           </div>
         </div>
       </section>
@@ -100,17 +109,25 @@ export default function Home() {
 
           <div className="mt-8 grid gap-6 md:grid-cols-3">
             {latestNews.map((item) => (
-              <article key={item.id} className="card flex flex-col">
-                <div className="flex items-center gap-2 text-xs">
-                  <span className="rounded bg-brand-100 px-2 py-0.5 font-semibold text-brand-700">
-                    {item.category}
-                  </span>
-                  <time className="text-slate-500" dateTime={item.date}>
-                    {formatDate(item.date)}
-                  </time>
+              <article key={item.id} className="flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition hover:shadow-md">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  loading="lazy"
+                  className="h-40 w-full object-cover"
+                />
+                <div className="flex flex-1 flex-col p-6">
+                  <div className="flex items-center gap-2 text-xs">
+                    <span className="rounded bg-brand-100 px-2 py-0.5 font-semibold text-brand-700">
+                      {item.category}
+                    </span>
+                    <time className="text-slate-500" dateTime={item.date}>
+                      {formatDate(item.date)}
+                    </time>
+                  </div>
+                  <h3 className="mt-3 text-lg font-semibold text-slate-900">{item.title}</h3>
+                  <p className="mt-2 flex-1 text-sm text-slate-600">{item.summary}</p>
                 </div>
-                <h3 className="mt-3 text-lg font-semibold text-slate-900">{item.title}</h3>
-                <p className="mt-2 flex-1 text-sm text-slate-600">{item.summary}</p>
               </article>
             ))}
           </div>
