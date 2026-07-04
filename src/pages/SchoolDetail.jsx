@@ -176,7 +176,7 @@ export default function SchoolDetail() {
             <p className="text-slate-600 mb-4">
               <span className="font-semibold">Address:</span> {school.location}, {school.llg}
             </p>
-            <div className="relative h-96 w-full overflow-hidden rounded-lg bg-slate-100">
+            <div className="relative h-64 sm:h-96 w-full overflow-hidden rounded-lg bg-slate-100">
               <iframe
                 width="100%"
                 height="100%"
