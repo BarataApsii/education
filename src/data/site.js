@@ -2,7 +2,7 @@
 // Replace these placeholder values with the real district details.
 export const site = {
   name: 'Unino Bundi District Education Office',
-  shortName: 'Unino Bundi DEO',
+  shortName: 'Education Office',
   tagline: 'Quality education for every child in the district',
   // Hero background (Unsplash — free to use, hotlinked via their CDN).
   heroImage:

@@ -31,7 +31,7 @@ export default function Header() {
         {/* Brand / logo */}
         <Link to="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
           <span className="flex h-9 w-9 items-center justify-center rounded-md bg-brand-600 text-sm font-bold text-white">
-            DE
+            UB
           </span>
           <span className="text-base font-bold leading-tight text-slate-900">
             {site.shortName}
