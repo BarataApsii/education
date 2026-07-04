@@ -90,9 +90,6 @@ export default function HeroSlider() {
         <div className="relative z-10 flex h-full items-center">
           <div className="container-page w-full">
             <div className="max-w-2xl">
-              <span className="inline-flex items-center rounded-full bg-white/20 px-3 py-1 text-xs font-semibold text-white backdrop-blur-sm">
-                Official District Portal
-              </span>
               <h1 className="mt-4 text-3xl font-extrabold leading-tight text-white sm:text-4xl lg:text-5xl">
                 {slide.heading}
               </h1>
