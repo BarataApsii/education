@@ -29,11 +29,14 @@ export default function Header() {
     <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur">
       <div className="container-page flex h-16 items-center justify-between">
         {/* Brand / logo */}
-        <Link to="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
-          <span className="flex h-9 w-9 items-center justify-center rounded-md bg-brand-600 text-sm font-bold text-white">
-            UB
-          </span>
-          <span className="text-base font-bold leading-tight text-slate-900">
+        <Link to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
+          <div className="flex flex-col items-center">
+            <span className="flex h-10 w-20 items-center justify-center rounded-md bg-brand-600 text-2xl font-bold text-white">
+              UB
+            </span>
+            <span className="text-[10px] font-semibold text-brand-600">Usino Bundi</span>
+          </div>
+          <span className="text-base font-bold leading-tight text-brand-600">
             {site.shortName}
           </span>
         </Link>
