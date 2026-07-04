@@ -19,6 +19,7 @@ export const site = {
     facebook: '#',
     twitter: '#',
   },
+  intranetUrl: '#',
 }
 
 export default site
