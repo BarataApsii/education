@@ -6,8 +6,8 @@ const slides = [
   {
     id: 1,
     image:
-      'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=1600&q=80',
-    alt: 'Books on a desk in a classroom',
+      'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1600&q=80',
+    alt: 'Students in a classroom learning together',
     heading: site.name,
     subtext: site.tagline,
     showStats: false,
@@ -74,7 +74,7 @@ export default function HeroSlider() {
               className="h-full w-full object-cover"
               loading={idx === 0 ? 'eager' : 'lazy'}
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-slate-900/50 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/70 to-transparent" />
           </div>
         ))}
 
