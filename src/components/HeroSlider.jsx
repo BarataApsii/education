@@ -1,14 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import { site } from '../data/site'
-import llgs from '../data/llgs.json'
-import schools from '../data/schools.json'
-
-const stats = [
-  { label: 'Local-Level Governments', value: llgs.length },
-  { label: 'Education institutions', value: '60+' },
-  { label: 'Students enrolled', value: '3,000+' },
-]
 
 const slides = [
   {
@@ -18,7 +10,7 @@ const slides = [
     alt: 'Books on a desk in a classroom',
     heading: site.name,
     subtext: site.tagline,
-    showStats: true,
+    showStats: false,
     cta: { label: 'View latest notices', to: '/news' },
   },
   {
@@ -104,25 +96,6 @@ export default function HeroSlider() {
                   Contact us
                 </Link>
               </div>
-
-              {/* Stats (only on first slide) */}
-              {slide.showStats && (
-                <div className="mt-8 grid grid-cols-3 gap-3">
-                  {stats.map((s) => (
-                    <div
-                      key={s.label}
-                      className="rounded-lg bg-white/10 px-3 py-3 text-center backdrop-blur-sm"
-                    >
-                      <div className="text-xl font-extrabold text-white sm:text-2xl">
-                        {s.value}
-                      </div>
-                      <div className="mt-0.5 text-[11px] text-slate-300 sm:text-xs">
-                        {s.label}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              )}
             </div>
           </div>
         </div>

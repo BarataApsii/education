@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom'
+import { useEffect, useState, useRef } from 'react'
 import Seo from '../components/Seo'
 import HeroSlider from '../components/HeroSlider'
 import { site } from '../data/site'
 import news from '../data/news.json'
+import llgs from '../data/llgs.json'
+import schools from '../data/schools.json'
 
 // Show the three most recent notices on the home page.
 const latestNews = [...news]
@@ -18,6 +21,66 @@ function formatDate(iso) {
 }
 
 export default function Home() {
+  const [counts, setCounts] = useState({ llgs: 0, schools: 0, students: 0 })
+  const [hasAnimated, setHasAnimated] = useState(false)
+  const statsRef = useRef(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated) {
+          setHasAnimated(true)
+          
+          // Animate LLGs count
+          const llgTarget = llgs.length
+          let llgCurrent = 0
+          const llgInterval = setInterval(() => {
+            llgCurrent += 1
+            if (llgCurrent >= llgTarget) {
+              clearInterval(llgInterval)
+              setCounts(prev => ({ ...prev, llgs: llgTarget }))
+            } else {
+              setCounts(prev => ({ ...prev, llgs: llgCurrent }))
+            }
+          }, 100)
+
+          // Animate schools count
+          const schoolTarget = 60
+          let schoolCurrent = 0
+          const schoolInterval = setInterval(() => {
+            schoolCurrent += 1
+            if (schoolCurrent >= schoolTarget) {
+              clearInterval(schoolInterval)
+              setCounts(prev => ({ ...prev, schools: schoolTarget }))
+            } else {
+              setCounts(prev => ({ ...prev, schools: schoolCurrent }))
+            }
+          }, 50)
+
+          // Animate students count
+          const studentTarget = 3000
+          let studentCurrent = 0
+          const studentInterval = setInterval(() => {
+            studentCurrent += 50
+            if (studentCurrent >= studentTarget) {
+              clearInterval(studentInterval)
+              setCounts(prev => ({ ...prev, students: studentTarget }))
+            } else {
+              setCounts(prev => ({ ...prev, students: studentCurrent }))
+            }
+          }, 30)
+        }
+      },
+      { threshold: 0.5 }
+    )
+
+    if (statsRef.current) {
+      observer.observe(statsRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [hasAnimated])
+
   return (
     <>
       <Seo
@@ -28,6 +91,38 @@ export default function Home() {
 
       {/* Hero slider */}
       <HeroSlider />
+
+      {/* Stats section */}
+      <section ref={statsRef} className="bg-brand-600 py-16">
+        <div className="container-page">
+          <div className="grid gap-8 md:grid-cols-3">
+            <div className="text-center">
+              <div className="text-4xl font-extrabold text-white sm:text-5xl">
+                {counts.llgs}
+              </div>
+              <div className="mt-2 text-sm font-medium text-brand-100 sm:text-base">
+                Local-Level Governments
+              </div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-extrabold text-white sm:text-5xl">
+                {counts.schools}+
+              </div>
+              <div className="mt-2 text-sm font-medium text-brand-100 sm:text-base">
+                Education Institutions
+              </div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-extrabold text-white sm:text-5xl">
+                {counts.students.toLocaleString()}+
+              </div>
+              <div className="mt-2 text-sm font-medium text-brand-100 sm:text-base">
+                Students Enrolled
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* District overview */}
       <section className="container-page py-14">
