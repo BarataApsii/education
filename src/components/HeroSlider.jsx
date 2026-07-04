@@ -6,7 +6,7 @@ import schools from '../data/schools.json'
 
 const stats = [
   { label: 'Local-Level Governments', value: llgs.length },
-  { label: 'Registered schools', value: `${schools.length}+` },
+  { label: 'Education institutions', value: '60+' },
   { label: 'Students enrolled', value: '3,000+' },
 ]
 
