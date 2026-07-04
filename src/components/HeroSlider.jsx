@@ -24,8 +24,8 @@ const slides = [
   {
     id: 2,
     image:
-      'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1600&q=80',
-    alt: 'Graduates celebrating their achievement',
+      'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=1600&q=80',
+    alt: 'Students walking together on campus',
     heading: 'Empowering Communities Through Education',
     subtext:
       'Working with Local-Level Governments, church agencies, and communities to deliver inclusive learning.',
