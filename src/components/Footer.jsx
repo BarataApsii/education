@@ -43,8 +43,14 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-slate-200">
-        <div className="container-page py-4 text-center text-xs text-slate-500">
-          &copy; {year} {site.name}. All rights reserved.
+        <div className="container-page flex flex-col items-center gap-1 py-4 text-center text-xs text-slate-500">
+          <p>&copy; {year} {site.name}. All rights reserved.</p>
+          <p>
+            Developed by:{' '}
+            <a href="https://nextdev-png.com/" target="_blank" rel="noopener noreferrer" className="font-medium text-brand-700 hover:text-brand-800">
+              Nextdev-PNG
+            </a>
+          </p>
         </div>
       </div>
     </footer>
