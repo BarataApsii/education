@@ -42,19 +42,23 @@ export default function SchoolDetail() {
   // Filter out current school and get other schools
   const otherSchools = schools.filter((s) => s.id !== id)
 
-  // Carousel navigation - move one card at a time, no wrap-around
+  // Cards per slide based on screen size
+  const cardsPerSlide = 3
+  const totalSlides = Math.ceil(otherSchools.length / cardsPerSlide)
+
+  // Carousel navigation - move one slide at a time, no wrap-around
   const handlePrevious = () => {
     setCurrentIndex((prev) => Math.max(0, prev - 1))
   }
 
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev === otherSchools.length - 1 ? 0 : prev + 1))
+    setCurrentIndex((prev) => (prev === totalSlides - 1 ? 0 : prev + 1))
   }
 
   // Auto-advance carousel - always slide forward, reset to start at end
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev === otherSchools.length - 1 ? 0 : prev + 1))
+      setCurrentIndex((prev) => (prev === totalSlides - 1 ? 0 : prev + 1))
     }, 5000)
     return () => clearInterval(interval)
   }, [])
@@ -340,59 +344,65 @@ export default function SchoolDetail() {
                   className="flex transition-transform duration-500 ease-in-out"
                   style={{ transform: `translateX(-${currentIndex * 100}%)` }}
                 >
-                  {otherSchools.map((otherSchool) => (
-                    <div key={otherSchool.id} className="w-full flex-shrink-0 px-2">
-                      <Link to={`/schools/${otherSchool.id}`} className="block">
-                        <div className="card group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden">
-                          <div className="relative h-48 overflow-hidden">
-                            <img
-                              src={otherSchool.image}
-                              alt={otherSchool.name}
-                              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                            <div className="absolute bottom-4 left-4 right-4">
-                              <span className="inline-block px-3 py-1 bg-brand-600 text-white text-xs font-semibold rounded-full mb-2">
-                                {otherSchool.level}
-                              </span>
-                            </div>
-                          </div>
-                          <div className="p-6">
-                            <h3 className="text-xl font-bold text-slate-900 group-hover:text-brand-600 transition-colors line-clamp-1">
-                              {otherSchool.name}
-                            </h3>
-                            <div className="mt-3 flex items-center gap-2 text-sm text-slate-600">
-                              <svg className="h-4 w-4 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                              </svg>
-                              {otherSchool.location}
-                            </div>
-                            <div className="mt-2 flex items-center gap-2 text-sm text-slate-600">
-                              <svg className="h-4 w-4 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                              </svg>
-                              {otherSchool.llg}
-                            </div>
-                            <div className="mt-4 flex items-center justify-between">
-                              <span className="text-sm text-slate-500">{otherSchool.enrolment} students</span>
-                              <span className="text-sm font-medium text-brand-600 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
-                                View Details
-                                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                                </svg>
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      </Link>
+                  {Array.from({ length: totalSlides }).map((_, slideIndex) => (
+                    <div key={slideIndex} className="w-full flex-shrink-0 px-2">
+                      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                        {otherSchools
+                          .slice(slideIndex * cardsPerSlide, (slideIndex + 1) * cardsPerSlide)
+                          .map((otherSchool) => (
+                            <Link key={otherSchool.id} to={`/schools/${otherSchool.id}`} className="block">
+                              <div className="card group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden">
+                                <div className="relative h-48 overflow-hidden">
+                                  <img
+                                    src={otherSchool.image}
+                                    alt={otherSchool.name}
+                                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                  />
+                                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                                  <div className="absolute bottom-4 left-4 right-4">
+                                    <span className="inline-block px-3 py-1 bg-brand-600 text-white text-xs font-semibold rounded-full mb-2">
+                                      {otherSchool.level}
+                                    </span>
+                                  </div>
+                                </div>
+                                <div className="p-6">
+                                  <h3 className="text-xl font-bold text-slate-900 group-hover:text-brand-600 transition-colors line-clamp-1">
+                                    {otherSchool.name}
+                                  </h3>
+                                  <div className="mt-3 flex items-center gap-2 text-sm text-slate-600">
+                                    <svg className="h-4 w-4 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                      <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                    {otherSchool.location}
+                                  </div>
+                                  <div className="mt-2 flex items-center gap-2 text-sm text-slate-600">
+                                    <svg className="h-4 w-4 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                    </svg>
+                                    {otherSchool.llg}
+                                  </div>
+                                  <div className="mt-4 flex items-center justify-between">
+                                    <span className="text-sm text-slate-500">{otherSchool.enrolment} students</span>
+                                    <span className="text-sm font-medium text-brand-600 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
+                                      View Details
+                                      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                                      </svg>
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                            </Link>
+                          ))}
+                      </div>
                     </div>
                   ))}
                 </div>
 
                 {/* Carousel Indicators */}
                 <div className="flex justify-center gap-2 mt-6">
-                  {otherSchools.map((_, index) => (
+                  {Array.from({ length: totalSlides }).map((_, index) => (
                     <button
                       key={index}
                       onClick={() => setCurrentIndex(index)}
