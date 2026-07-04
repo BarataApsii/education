@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import LLGs from './pages/LLGs'
 import Schools from './pages/Schools'
+import SchoolDetail from './pages/SchoolDetail'
 import News from './pages/News'
 import Contact from './pages/Contact'
 import NotFound from './pages/NotFound'
@@ -16,6 +17,7 @@ export default function App() {
         <Route path="about" element={<About />} />
         <Route path="llgs" element={<LLGs />} />
         <Route path="schools" element={<Schools />} />
+        <Route path="schools/:id" element={<SchoolDetail />} />
         <Route path="news" element={<News />} />
         <Route path="contact" element={<Contact />} />
         <Route path="*" element={<NotFound />} />

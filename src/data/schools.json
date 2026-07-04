@@ -7,7 +7,25 @@
     "location": "Bereina Station",
     "enrolment": 620,
     "type": "Government",
-    "image": "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=800&q=80"
+    "image": "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=800&q=80",
+    "informationDesk": {
+      "phone": "+675 312 3456",
+      "email": "info.bereina@education.gov.pg"
+    },
+    "registrationNumber": "PNG-EDU-001",
+    "coordinates": "-8.5333, 147.2833",
+    "established": "1965",
+    "campusImages": [
+      "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=800&q=80"
+    ],
+    "principal": {
+      "name": "John Kila",
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80",
+      "bio": "Mr. John Kila has been serving as Principal of Bereina Primary School since 2018. With over 25 years of experience in education, he has dedicated his career to improving educational outcomes for students in the Mekeo–Kuni LLG. He holds a Bachelor of Education from the University of Papua New Guinea and is passionate about community engagement and curriculum development.",
+      "qualifications": "Bachelor of Education, UPNG",
+      "since": "2018"
+    }
   },
   {
     "id": "veifaa-elementary",
@@ -17,7 +35,24 @@
     "location": "Veifa'a Village",
     "enrolment": 180,
     "type": "Government",
-    "image": "https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=800&q=80"
+    "image": "https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=800&q=80",
+    "informationDesk": {
+      "phone": "+675 312 3457",
+      "email": "info.veifaa@education.gov.pg"
+    },
+    "registrationNumber": "PNG-EDU-002",
+    "coordinates": "-8.5417, 147.2917",
+    "established": "1972",
+    "campusImages": [
+      "https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=800&q=80"
+    ],
+    "principal": {
+      "name": "Mary Tau",
+      "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80",
+      "bio": "Ms. Mary Tau has led Veifa'a Elementary School since 2020. She brings 18 years of teaching experience and a strong commitment to early childhood education. Her focus is on creating a nurturing environment that fosters foundational literacy and numeracy skills for young learners.",
+      "qualifications": "Diploma in Teaching, Port Moresby Teachers College",
+      "since": "2020"
+    }
   },
   {
     "id": "yule-island-secondary",
@@ -27,7 +62,25 @@
     "location": "Yule Island",
     "enrolment": 940,
     "type": "Church-agency (Catholic)",
-    "image": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80"
+    "image": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80",
+    "informationDesk": {
+      "phone": "+675 312 3458",
+      "email": "info.yule@catholic.org.pg"
+    },
+    "registrationNumber": "PNG-EDU-003",
+    "coordinates": "-8.4667, 147.3500",
+    "established": "1958",
+    "campusImages": [
+      "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80"
+    ],
+    "principal": {
+      "name": "Fr. Peter Namu",
+      "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=800&q=80",
+      "bio": "Fr. Peter Namu has served as Principal of Yule Island Secondary School since 2015. A dedicated educator and priest, he combines academic leadership with pastoral care. He has overseen significant improvements in academic performance and facilities development at the school.",
+      "qualifications": "Master of Education, Divine Word University",
+      "since": "2015"
+    }
   },
   {
     "id": "delena-primary",
@@ -37,7 +90,24 @@
     "location": "Delena Village",
     "enrolment": 410,
     "type": "Church-agency (Catholic)",
-    "image": "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80"
+    "image": "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80",
+    "informationDesk": {
+      "phone": "+675 312 3459",
+      "email": "info.delena@catholic.org.pg"
+    },
+    "registrationNumber": "PNG-EDU-004",
+    "coordinates": "-8.4833, 147.3667",
+    "established": "1968",
+    "campusImages": [
+      "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80"
+    ],
+    "principal": {
+      "name": "Sarah Kepi",
+      "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=800&q=80",
+      "bio": "Mrs. Sarah Kepi has been Principal of Delena Primary School since 2019. With 22 years in education, she specializes in literacy development and community partnership programs. She has implemented successful reading initiatives that have improved student outcomes significantly.",
+      "qualifications": "Bachelor of Primary Education, UPNG",
+      "since": "2019"
+    }
   },
   {
     "id": "waima-primary",
@@ -47,7 +117,24 @@
     "location": "Waima Village",
     "enrolment": 505,
     "type": "Government",
-    "image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80"
+    "image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80",
+    "informationDesk": {
+      "phone": "+675 312 3460",
+      "email": "info.waima@education.gov.pg"
+    },
+    "registrationNumber": "PNG-EDU-005",
+    "coordinates": "-8.5000, 147.4000",
+    "established": "1970",
+    "campusImages": [
+      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80"
+    ],
+    "principal": {
+      "name": "David Raka",
+      "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80",
+      "bio": "Mr. David Raka has led Waima Primary School since 2017. He brings 20 years of educational experience and a strong background in mathematics and science education. He has introduced innovative teaching methods and technology integration to enhance learning outcomes.",
+      "qualifications": "Bachelor of Science Education, UPNG",
+      "since": "2017"
+    }
   },
   {
     "id": "roro-tvet",
@@ -57,6 +144,23 @@
     "location": "Roro",
     "enrolment": 160,
     "type": "Government",
-    "image": "https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=800&q=80"
+    "image": "https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=800&q=80",
+    "informationDesk": {
+      "phone": "+675 312 3461",
+      "email": "info.roro@education.gov.pg"
+    },
+    "registrationNumber": "PNG-EDU-006",
+    "coordinates": "-8.5167, 147.4167",
+    "established": "1985",
+    "campusImages": [
+      "https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=800&q=80"
+    ],
+    "principal": {
+      "name": "James Loko",
+      "image": "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80",
+      "bio": "Mr. James Loko has been the Head of Roro Vocational Training Centre since 2021. With 15 years of experience in technical and vocational education, he has developed strong partnerships with local industries to provide practical training opportunities for students.",
+      "qualifications": "Diploma in Technical Education, Port Moresby Technical College",
+      "since": "2021"
+    }
   }
 ]

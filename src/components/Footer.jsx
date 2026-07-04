@@ -42,9 +42,11 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-slate-200">
-        <div className="container-page py-4 text-center text-xs text-slate-500">
+      <div className="border-t border-brand-500 bg-brand-600">
+        <div className="container-page py-4 text-center text-xs text-brand-100">
           &copy; {year} {site.name}. All rights reserved.
+          <span className="mx-2">|</span>
+          Developed by: <a className="hover:text-white transition" href="https://nextdev-png.com/" target="_blank" rel="noopener noreferrer">NextDev-PNG</a>
         </div>
       </div>
     </footer>

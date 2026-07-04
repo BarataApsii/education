@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import { Link } from 'react-router-dom'
 import Seo from '../components/Seo'
 import PageHeader from '../components/PageHeader'
 import schools from '../data/schools.json'
@@ -61,9 +62,9 @@ export default function Schools() {
             </thead>
             <tbody className="divide-y divide-slate-100 bg-white">
               {filtered.map((s) => (
-                <tr key={s.id} className="hover:bg-slate-50">
+                <tr key={s.id} className="hover:bg-slate-50 cursor-pointer">
                   <td className="px-4 py-3 font-medium text-slate-900">
-                    <div className="flex items-center gap-3">
+                    <Link to={`/schools/${s.id}`} className="flex items-center gap-3">
                       <img
                         src={s.image}
                         alt={s.name}
@@ -71,7 +72,7 @@ export default function Schools() {
                         className="h-10 w-14 flex-none rounded object-cover"
                       />
                       <span>{s.name}</span>
-                    </div>
+                    </Link>
                   </td>
                   <td className="px-4 py-3 text-slate-600">{s.level}</td>
                   <td className="px-4 py-3 text-slate-600">{s.llg}</td>
@@ -87,7 +88,7 @@ export default function Schools() {
         {/* Mobile cards */}
         <div className="grid gap-4 md:hidden">
           {filtered.map((s) => (
-            <div key={s.id} className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+            <Link key={s.id} to={`/schools/${s.id}`} className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm hover:shadow-md transition">
               <img
                 src={s.image}
                 alt={s.name}
@@ -105,7 +106,7 @@ export default function Schools() {
                 <div><dt className="text-slate-400">Enrolment</dt><dd>{s.enrolment.toLocaleString()}</dd></div>
               </dl>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
