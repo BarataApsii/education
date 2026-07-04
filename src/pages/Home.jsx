@@ -197,7 +197,7 @@ export default function Home() {
               Explore our educational institutions across the district. Click on a marker to view school details.
             </p>
           </div>
-          <div className="w-full rounded-xl border border-slate-200 shadow-lg overflow-hidden" style={{ height: '500px' }}>
+          <div className="w-full rounded-xl border border-slate-200 shadow-lg overflow-hidden h-80 sm:h-[500px]">
             <MapContainer center={[-8.5, 147.35]} zoom={10} style={{ height: '100%', width: '100%' }}>
               <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
