@@ -127,28 +127,6 @@ export default function HeroSlider() {
           </div>
         </div>
 
-        {/* Navigation arrows */}
-        <button
-          type="button"
-          onClick={prev}
-          className="absolute left-3 top-1/2 z-20 -translate-y-1/2 rounded-full bg-white/20 p-2 text-white backdrop-blur-sm transition hover:bg-white/40"
-          aria-label="Previous slide"
-        >
-          <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-          </svg>
-        </button>
-        <button
-          type="button"
-          onClick={next}
-          className="absolute right-3 top-1/2 z-20 -translate-y-1/2 rounded-full bg-white/20 p-2 text-white backdrop-blur-sm transition hover:bg-white/40"
-          aria-label="Next slide"
-        >
-          <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-          </svg>
-        </button>
-
         {/* Dot indicators */}
         <div className="absolute bottom-5 left-1/2 z-20 flex -translate-x-1/2 gap-2">
           {slides.map((s, idx) => (
