@@ -90,13 +90,13 @@ export default function HeroSlider() {
         <div className="relative z-10 flex h-full items-center">
           <div className="container-page w-full">
             <div className="max-w-2xl">
-              <h1 className="mt-4 text-3xl font-extrabold leading-tight text-white sm:text-4xl lg:text-5xl">
+              <h1 className="mt-4 text-2xl font-extrabold leading-tight text-white sm:text-3xl lg:text-5xl">
                 {slide.heading}
               </h1>
-              <p className="mt-4 max-w-xl text-base text-slate-200 sm:text-lg">
+              <p className="mt-3 max-w-xl text-sm text-slate-200 sm:text-base md:text-lg hidden sm:block">
                 {slide.subtext}
               </p>
-              <div className="mt-6 flex flex-wrap gap-3">
+              <div className="mt-4 flex flex-wrap gap-3 sm:mt-6">
                 <Link to={slide.cta.to} className="btn-primary">
                   {slide.cta.label}
                 </Link>
