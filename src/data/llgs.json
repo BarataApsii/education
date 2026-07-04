@@ -1,0 +1,26 @@
+[
+  {
+    "id": "mekeo-kuni",
+    "name": "Mekeo–Kuni LLG",
+    "headquarters": "Bereina Station",
+    "wards": 18,
+    "description": "Covering the fertile inland plains, the Mekeo–Kuni LLG serves a largely agricultural population and hosts several of the district's oldest primary schools.",
+    "focus": "Improving early-grade literacy and expanding access to elementary schooling across rural wards."
+  },
+  {
+    "id": "kairuku-coastal",
+    "name": "Kairuku Coastal LLG",
+    "headquarters": "Yule Island",
+    "wards": 15,
+    "description": "Spanning the coastal communities and islands, this LLG coordinates education services for fishing and mission-station villages with a strong Catholic education heritage.",
+    "focus": "Supporting mission-agency schools and improving teacher housing on the islands."
+  },
+  {
+    "id": "waima-roro",
+    "name": "Waima–Roro LLG",
+    "headquarters": "Waima",
+    "wards": 12,
+    "description": "The Waima–Roro LLG represents the western coastal wards, balancing subsistence livelihoods with a growing demand for secondary school places.",
+    "focus": "Building additional classrooms and strengthening the transition from primary to secondary education."
+  }
+]

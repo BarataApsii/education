@@ -1,0 +1,56 @@
+[
+  {
+    "id": "bereina-primary",
+    "name": "Bereina Primary School",
+    "level": "Primary",
+    "llg": "Mekeo–Kuni LLG",
+    "location": "Bereina Station",
+    "enrolment": 620,
+    "type": "Government"
+  },
+  {
+    "id": "veifaa-elementary",
+    "name": "Veifa'a Elementary School",
+    "level": "Elementary",
+    "llg": "Mekeo–Kuni LLG",
+    "location": "Veifa'a Village",
+    "enrolment": 180,
+    "type": "Government"
+  },
+  {
+    "id": "yule-island-secondary",
+    "name": "Yule Island Secondary School",
+    "level": "Secondary",
+    "llg": "Kairuku Coastal LLG",
+    "location": "Yule Island",
+    "enrolment": 940,
+    "type": "Church-agency (Catholic)"
+  },
+  {
+    "id": "delena-primary",
+    "name": "Delena Primary School",
+    "level": "Primary",
+    "llg": "Kairuku Coastal LLG",
+    "location": "Delena Village",
+    "enrolment": 410,
+    "type": "Church-agency (Catholic)"
+  },
+  {
+    "id": "waima-primary",
+    "name": "Waima Primary School",
+    "level": "Primary",
+    "llg": "Waima–Roro LLG",
+    "location": "Waima Village",
+    "enrolment": 505,
+    "type": "Government"
+  },
+  {
+    "id": "roro-tvet",
+    "name": "Roro Vocational Training Centre",
+    "level": "Vocational (TVET)",
+    "llg": "Waima–Roro LLG",
+    "location": "Roro",
+    "enrolment": 160,
+    "type": "Government"
+  }
+]
