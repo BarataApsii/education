@@ -1,20 +1,13 @@
 import { Link } from 'react-router-dom'
 import Seo from '../components/Seo'
+import HeroSlider from '../components/HeroSlider'
 import { site } from '../data/site'
 import news from '../data/news.json'
-import llgs from '../data/llgs.json'
-import schools from '../data/schools.json'
 
 // Show the three most recent notices on the home page.
 const latestNews = [...news]
   .sort((a, b) => new Date(b.date) - new Date(a.date))
   .slice(0, 3)
-
-const stats = [
-  { label: 'Local-Level Governments', value: llgs.length },
-  { label: 'Registered schools', value: `${schools.length}+` },
-  { label: 'Students enrolled', value: '3,000+' },
-]
 
 function formatDate(iso) {
   return new Date(iso).toLocaleDateString('en-GB', {
@@ -33,42 +26,8 @@ export default function Home() {
         path="/"
       />
 
-      {/* Hero */}
-      <section className="bg-gradient-to-b from-brand-50 to-white">
-        <div className="container-page grid items-center gap-10 py-16 lg:grid-cols-2 lg:py-24">
-          <div>
-            <span className="inline-flex items-center rounded-full bg-brand-100 px-3 py-1 text-xs font-semibold text-brand-700">
-              Official District Portal
-            </span>
-            <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
-              {site.name}
-            </h1>
-            <p className="mt-4 max-w-xl text-lg text-slate-600">{site.tagline}</p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link to="/news" className="btn-primary">View latest notices</Link>
-              <Link to="/about" className="btn-outline">About the district</Link>
-            </div>
-
-            <div className="mt-10 grid grid-cols-3 gap-4">
-              {stats.map((s) => (
-                <div key={s.label} className="card text-center">
-                  <div className="text-2xl font-extrabold text-brand-700 sm:text-3xl">{s.value}</div>
-                  <div className="mt-1 text-xs text-slate-500">{s.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="relative">
-            <img
-              src={site.heroImage}
-              alt="Students learning in a district classroom"
-              loading="eager"
-              className="aspect-[4/3] w-full rounded-2xl object-cover shadow-lg"
-            />
-          </div>
-        </div>
-      </section>
+      {/* Hero slider */}
+      <HeroSlider />
 
       {/* District overview */}
       <section className="container-page py-14">
