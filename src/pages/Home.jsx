@@ -191,7 +191,7 @@ export default function Home() {
           <div className="mt-8 grid gap-6 md:grid-cols-3" role="list">
             {latestNews.map((item) => (
               <article key={item.id} className="group flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-                <Link to={`/news/${item.id}`} className="block">
+                <Link to="/news" className="block">
                   <img
                     src={item.image}
                     alt={item.title}
@@ -209,10 +209,10 @@ export default function Home() {
                     </time>
                   </div>
                   <h3 className="mt-3 text-lg font-semibold text-slate-900 group-hover:text-brand-600 transition-colors">
-                    <Link to={`/news/${item.id}`}>{item.title}</Link>
+                    <Link to="/news">{item.title}</Link>
                   </h3>
                   <p className="mt-2 flex-1 text-sm text-slate-600 line-clamp-3">{item.summary}</p>
-                  <Link to={`/news/${item.id}`} className="mt-4 text-sm font-semibold text-brand-600 hover:text-brand-700 transition-colors inline-flex items-center gap-1">
+                  <Link to="/news" className="mt-4 text-sm font-semibold text-brand-600 hover:text-brand-700 transition-colors inline-flex items-center gap-1">
                     Read more <span aria-hidden="true">&rarr;</span>
                   </Link>
                 </div>
