@@ -38,12 +38,28 @@ export default function SchoolDetail() {
   const { id } = useParams()
   const school = schools.find((s) => s.id === id)
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [cardsPerSlide, setCardsPerSlide] = useState(3)
 
   // Filter out current school and get other schools
   const otherSchools = schools.filter((s) => s.id !== id)
 
-  // Cards per slide based on screen size
-  const cardsPerSlide = 3
+  // Responsive cards per slide
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setCardsPerSlide(3)
+      } else if (window.innerWidth >= 640) {
+        setCardsPerSlide(2)
+      } else {
+        setCardsPerSlide(1)
+      }
+    }
+
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
   const totalSlides = Math.ceil(otherSchools.length / cardsPerSlide)
 
   // Carousel navigation - move one slide at a time, no wrap-around
@@ -61,7 +77,7 @@ export default function SchoolDetail() {
       setCurrentIndex((prev) => (prev === totalSlides - 1 ? 0 : prev + 1))
     }, 5000)
     return () => clearInterval(interval)
-  }, [])
+  }, [totalSlides])
 
   if (!school) {
     return (
@@ -346,7 +362,7 @@ export default function SchoolDetail() {
                 >
                   {Array.from({ length: totalSlides }).map((_, slideIndex) => (
                     <div key={slideIndex} className="w-full flex-shrink-0 px-2">
-                      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                      <div className={`grid gap-4 ${cardsPerSlide === 1 ? 'grid-cols-1' : cardsPerSlide === 2 ? 'sm:grid-cols-2' : 'sm:grid-cols-2 lg:grid-cols-3'}`}>
                         {otherSchools
                           .slice(slideIndex * cardsPerSlide, (slideIndex + 1) * cardsPerSlide)
                           .map((otherSchool) => (
