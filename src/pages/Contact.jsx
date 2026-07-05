@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import Seo from '../components/Seo'
 import PageHeader from '../components/PageHeader'
 import { site } from '../data/site'
@@ -46,6 +47,8 @@ export default function Contact() {
       <PageHeader
         title="Contact Us"
         subtitle="Get in touch with the District Education Office."
+        image="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?auto=format&fit=crop&w=1600&q=80"
+        imageAlt="Desk with phone and correspondence at an office"
       />
 
       <section className="container-page py-14">
@@ -155,6 +158,33 @@ export default function Contact() {
                 Send Message
               </button>
             </form>
+          </div>
+        </div>
+      </section>
+
+      {/* Closing CTA */}
+      <section className="bg-brand-600 py-14" aria-labelledby="contact-cta-heading">
+        <div className="container-page text-center">
+          <h2 id="contact-cta-heading" className="text-2xl font-bold text-white sm:text-3xl">
+            Explore the District
+          </h2>
+          <p className="mx-auto mt-3 max-w-2xl text-brand-100">
+            While you&apos;re here, browse our school directory or catch up on the latest official
+            notices and announcements from the District Education Office.
+          </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <Link
+              to="/schools"
+              className="rounded-lg bg-white px-6 py-3 font-semibold text-brand-700 transition-colors hover:bg-brand-50"
+            >
+              Browse Schools
+            </Link>
+            <Link
+              to="/news"
+              className="rounded-lg border-2 border-white px-6 py-3 font-semibold text-white transition-colors hover:bg-white/10"
+            >
+              View Notices
+            </Link>
           </div>
         </div>
       </section>

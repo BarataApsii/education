@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import Seo from '../components/Seo'
 import PageHeader from '../components/PageHeader'
 import llgs from '../data/llgs.json'
@@ -13,6 +14,8 @@ export default function LLGs() {
       <PageHeader
         title="Local-Level Governments"
         subtitle="The district is made up of three LLGs, each coordinating education services for its wards."
+        image="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1600&q=80"
+        imageAlt="Green highland valley landscape"
       />
 
       <section className="container-page py-14">
@@ -45,6 +48,33 @@ export default function LLGs() {
               </div>
             </article>
           ))}
+        </div>
+      </section>
+
+      {/* Closing CTA */}
+      <section className="bg-brand-600 py-14" aria-labelledby="llgs-cta-heading">
+        <div className="container-page text-center">
+          <h2 id="llgs-cta-heading" className="text-2xl font-bold text-white sm:text-3xl">
+            Find Schools in Your LLG
+          </h2>
+          <p className="mx-auto mt-3 max-w-2xl text-brand-100">
+            Browse the district school directory to see the elementary, primary, secondary and
+            vocational schools serving each ward.
+          </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <Link
+              to="/schools"
+              className="rounded-lg bg-white px-6 py-3 font-semibold text-brand-700 transition-colors hover:bg-brand-50"
+            >
+              Browse Schools
+            </Link>
+            <Link
+              to="/contact"
+              className="rounded-lg border-2 border-white px-6 py-3 font-semibold text-white transition-colors hover:bg-white/10"
+            >
+              Contact Us
+            </Link>
+          </div>
         </div>
       </section>
     </>

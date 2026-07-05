@@ -101,17 +101,12 @@ export default function SchoolDetail() {
         description={`${school.name} - ${school.level} school in ${school.location}, ${school.llg}. Contact: ${school.phone}`}
         path={`/schools/${school.id}`}
       />
-      <PageHeader title={school.name} subtitle={`${school.level} School • ${school.llg}`} />
-
-      {/* Hero Banner */}
-      <section className="relative h-64 sm:h-80 lg:h-96">
-        <img
-          src={school.image}
-          alt={school.name}
-          className="h-full w-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-      </section>
+      <PageHeader
+        title={school.name}
+        subtitle={`${school.level} School • ${school.llg}`}
+        image={school.image}
+        imageAlt={school.name}
+      />
 
       <section className="container-page py-14">
         <div className="grid gap-8 lg:grid-cols-3">

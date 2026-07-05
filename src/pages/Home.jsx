@@ -279,9 +279,9 @@ export default function Home() {
       {/* CTA Section */}
       <section className="bg-brand-600 py-16" aria-labelledby="cta-heading">
         <div className="container-page text-center">
-          <h2 id="cta-heading" className="text-3xl font-bold text-white sm:text-4xl">Ready to get started?</h2>
+          <h2 id="cta-heading" className="text-3xl font-bold text-white sm:text-4xl">Stay Informed</h2>
           <p className="mt-4 text-lg text-brand-100 max-w-2xl mx-auto">
-            Explore our schools, stay updated with latest notices, or get in touch with our education office for more information.
+            This website is the official medium for district notices — check back regularly so your school and ward never miss an announcement, or get in touch with our education office.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link to="/schools" className="bg-white text-brand-700 px-6 py-3 rounded-lg font-semibold hover:bg-brand-50 transition-colors">

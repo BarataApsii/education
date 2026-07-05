@@ -25,6 +25,8 @@ export default function Schools() {
       <PageHeader
         title="Schools"
         subtitle="A directory of schools across the district. Data shown here is placeholder content."
+        image="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1600&q=80"
+        imageAlt="Rows of desks in a bright classroom"
       />
 
       <section className="container-page py-14">
@@ -117,6 +119,33 @@ export default function Schools() {
               </div>
             </Link>
           ))}
+        </div>
+      </section>
+
+      {/* Closing CTA */}
+      <section className="bg-brand-600 py-14" aria-labelledby="schools-cta-heading">
+        <div className="container-page text-center">
+          <h2 id="schools-cta-heading" className="text-2xl font-bold text-white sm:text-3xl">
+            Can&apos;t Find Your School?
+          </h2>
+          <p className="mx-auto mt-3 max-w-2xl text-brand-100">
+            If your school is missing or its details need updating, contact the District Education
+            Office so we can keep the directory accurate for every ward.
+          </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <Link
+              to="/contact"
+              className="rounded-lg bg-white px-6 py-3 font-semibold text-brand-700 transition-colors hover:bg-brand-50"
+            >
+              Contact Us
+            </Link>
+            <Link
+              to="/news"
+              className="rounded-lg border-2 border-white px-6 py-3 font-semibold text-white transition-colors hover:bg-white/10"
+            >
+              View Notices
+            </Link>
+          </div>
         </div>
       </section>
     </>

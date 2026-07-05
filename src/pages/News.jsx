@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import Seo from '../components/Seo'
 import PageHeader from '../components/PageHeader'
 import news from '../data/news.json'
@@ -24,6 +25,8 @@ export default function News() {
       <PageHeader
         title="News & Notices"
         subtitle="Official announcements, events and notices from the District Education Office."
+        image="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1600&q=80"
+        imageAlt="Stack of newspapers with headlines"
       />
 
       <section className="container-page py-14">
@@ -51,6 +54,33 @@ export default function News() {
             </li>
           ))}
         </ul>
+      </section>
+
+      {/* Closing CTA */}
+      <section className="bg-brand-600 py-14" aria-labelledby="news-cta-heading">
+        <div className="container-page text-center">
+          <h2 id="news-cta-heading" className="text-2xl font-bold text-white sm:text-3xl">
+            Never Miss a Notice
+          </h2>
+          <p className="mx-auto mt-3 max-w-2xl text-brand-100">
+            This page is the official medium for district announcements — check back regularly so
+            every school in every ward stays informed. Have a notice to publish? Contact the office.
+          </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <Link
+              to="/contact"
+              className="rounded-lg bg-white px-6 py-3 font-semibold text-brand-700 transition-colors hover:bg-brand-50"
+            >
+              Contact the Office
+            </Link>
+            <Link
+              to="/schools"
+              className="rounded-lg border-2 border-white px-6 py-3 font-semibold text-white transition-colors hover:bg-white/10"
+            >
+              Browse Schools
+            </Link>
+          </div>
+        </div>
       </section>
     </>
   )
