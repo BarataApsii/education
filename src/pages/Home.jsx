@@ -277,8 +277,13 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-brand-600 py-16" aria-labelledby="cta-heading">
-        <div className="container-page text-center">
+      <section 
+        className="py-16 relative bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/images/melanesian-designs/sample-bg.png')" }}
+        aria-labelledby="cta-heading"
+      >
+        <div className="absolute inset-0 bg-brand-900/70"></div>
+        <div className="container-page text-center relative z-10">
           <h2 id="cta-heading" className="text-3xl font-bold text-white sm:text-4xl">Stay Informed</h2>
           <p className="mt-4 text-lg text-brand-100 max-w-2xl mx-auto">
             This website is the official medium for district notices — check back regularly so your school and ward never miss an announcement, or get in touch with our education office.

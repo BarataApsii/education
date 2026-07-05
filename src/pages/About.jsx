@@ -109,9 +109,14 @@ export default function About() {
       </section>
 
       {/* Closing CTA */}
-      <section className="bg-brand-600">
-        <div className="container-page py-14 text-center">
-          <h2 className="text-2xl font-bold text-white sm:text-3xl">Discover Our Schools</h2>
+      <section 
+        className="py-14 relative bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/images/melanesian-designs/sample-bg.png')" }}
+        aria-labelledby="about-cta-heading"
+      >
+        <div className="absolute inset-0 bg-brand-900/70"></div>
+        <div className="container-page text-center relative z-10">
+          <h2 id="about-cta-heading" className="text-2xl font-bold text-white sm:text-3xl">Discover Our Schools</h2>
           <p className="mx-auto mt-3 max-w-2xl text-brand-100">
             From elementary classrooms to vocational centres, explore the schools serving
             communities across Usino Bundi District.

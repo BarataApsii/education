@@ -52,8 +52,13 @@ export default function LLGs() {
       </section>
 
       {/* Closing CTA */}
-      <section className="bg-brand-600 py-14" aria-labelledby="llgs-cta-heading">
-        <div className="container-page text-center">
+      <section 
+        className="py-14 relative bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/images/melanesian-designs/sample-bg.png')" }}
+        aria-labelledby="llgs-cta-heading"
+      >
+        <div className="absolute inset-0 bg-brand-900/70"></div>
+        <div className="container-page text-center relative z-10">
           <h2 id="llgs-cta-heading" className="text-2xl font-bold text-white sm:text-3xl">
             Find Schools in Your LLG
           </h2>
